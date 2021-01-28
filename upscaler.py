@@ -26,5 +26,6 @@ def upscale_wrapper(fn):
     # images.append((lores, hires))
     print('done %s' %  fn)
 
-for fn in glob.glob('images/*.jpg'):
-    upscale_wrapper(fn)
+for pattern in ['images/*jpg', 'images/*png']:
+    for fn in glob.glob(pattern):
+        upscale_wrapper(fn)
